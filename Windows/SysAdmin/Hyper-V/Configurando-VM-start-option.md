@@ -21,6 +21,49 @@ o parâmetro `AutomaticStartAction` para quem utiliz `StartAction` para quem est
 - [SCVMM](#scvmm)
 
 ---
+## HYPERV
+### Como verificar a configuração atual
+
+Use o seguinte comando para listar o nome das VMs e sua configuração de inicialização:
+
+```powershell
+Get-VM | Select-Object Name,AutomaticStartAction
+```
+![AutomaticStartAction](../../Imagem/StartAction1.jpg)
+
+para verificar uma VM especifica, basta utilizar a opção -Name (em nosso exemplo vamos procurar uma VM chamada "teste" )
+
+```powershell
+Get-VM -Name teste | Select-Object Name,AutomaticStartAction
+```
+Esse comando vai retornar uma lista com o nome das VMs e configuração do AutomaticStartAction
+
+![AutomaticStartAction](../../Imagem/HStartAction2.jpg)
+
+Caso queira exportar a lista das VMs, basta usar:
+
+```powershell
+Get-VM | Select-Object Name,AutomaticStartAction | Export-Csv -Path "C:\VMs.csv" -NoTypeInformation -Encoding UTF8
+```
+
+A propriedade AutomaticStartAction pode ter os seguintes valores:
+
+`Nothing`: A VM não será iniciada automaticamente.  
+`Start`: A VM sempre será iniciada automaticamente quando o host for ligado.  
+`StartIfRunning`: A VM será iniciada automaticamente apenas se estava em execução antes do host ser desligado.  
+
+### Setar o parâmetro StartAction
+
+```powershell
+Get-VM -Name teste | Set-VM -AutomaticStartAction StartIfRunning
+```
+
+![AutomaticStartAction](../../Imagem/HStartAction3.jpg)
+
+
+---
+
+
 ## SCVMM
 
 ### Como verificar a configuração atual
