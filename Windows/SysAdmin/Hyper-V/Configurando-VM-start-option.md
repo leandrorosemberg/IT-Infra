@@ -22,15 +22,16 @@ Use o seguinte comando para listar o nome das VMs e sua configuração de inicia
 ```powershell
 Get-VM | Select-Object Name,StartAction
 ```
-![StartAction](Windows/Imagem/StartAction1.png)
+![StartAction](../../Imagem/StartAction1.jpg)
 
 para verificar uma VM especifica, basta utilizar a opção -Name (em nosso exemplo vamos procurar uma VM chamada "teste" )
 
 ```powershell
 Get-VM -Name teste | Select-Object Name,StartAction
 ```
-
 Esse comando vai retornar uma lista com o nome das VMs e configuração do StartAction
+
+![StartAction](../../Imagem/StartAction2.jpg)
 
 Caso queira exportar a lista das VMs, basta usar:
 
@@ -46,3 +47,8 @@ A propriedade StartAction pode ter os seguintes valores:
 
 ### Setar o parâmetro StartAction
 
+```powershell
+Get-VM -Name teste | Set-VM -StartAction TurnOnVMIfRunningWhenVSStopped
+```
+
+![StartAction](../../Imagem/StartAction3.jpg)
