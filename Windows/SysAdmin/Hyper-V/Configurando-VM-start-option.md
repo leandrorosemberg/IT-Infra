@@ -52,3 +52,6 @@ Get-VM -Name teste | Set-VM -StartAction TurnOnVMIfRunningWhenVSStopped
 ```
 
 ![StartAction](../../Imagem/StartAction3.jpg)
+
+Recomendação: Usar `TurnOnVMIfRunningWhenVSStopped` é a opção mais segura, pois respeita o estado anterior da VM e evita iniciar máquinas desnecessariamente após uma reinicialização do host.
+
