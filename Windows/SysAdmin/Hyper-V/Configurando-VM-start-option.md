@@ -5,7 +5,7 @@ Ao gerenciar ambientes virtualizados com Hyper-V, é essencial garantir que as m
 
 Neste how-to, vamos trabalhar com as opções de configuração para quem utilizar powershell conectado diretamente em um host Hyper-V e para quem conectar pela console SCVMM (System Center Virtual Machine Manager)
 
-o parâmetro `AutomaticStartAction` para quem utiliz `StartAction` para quem está acessando através do System Center Virtual Machine Manager (SCVMM), que define o comportamento de inicialização automática de uma VM. Esse parâmetro pode ser consultado e configurado via PowerShell, permitindo que você controle se a VM deve ou não ser iniciada automaticamente quando o host for ligado.
+o parâmetro `AutomaticStartAction` para quem utiliza `StartAction` para quem está acessando através do System Center Virtual Machine Manager (SCVMM), que define o comportamento de inicialização automática de uma VM. Esse parâmetro pode ser consultado e configurado via PowerShell, permitindo que você controle se a VM deve ou não ser iniciada automaticamente quando o host for ligado.
   
   
 ###  Benefícios de configurar o Automatic Startup
