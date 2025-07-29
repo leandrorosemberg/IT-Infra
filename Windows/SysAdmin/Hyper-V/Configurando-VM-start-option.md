@@ -31,7 +31,7 @@ Get-VM | Select-Object Name,AutomaticStartAction
 ```
 ![AutomaticStartAction](../../Imagem/HStartAction1.jpg)
 
-para verificar uma VM especifica, basta utilizar a opção -Name (em nosso exemplo vamos procurar uma VM chamada "teste" )
+para verificar uma VM específica, basta utilizar a opção -Name (em nosso exemplo vamos procurar uma VM chamada "teste" )
 
 ```powershell
 Get-VM -Name teste | Select-Object Name,AutomaticStartAction
@@ -75,7 +75,7 @@ Get-VM | Select-Object Name,StartAction
 ```
 ![StartAction](../../Imagem/StartAction1.jpg)
 
-para verificar uma VM especifica, basta utilizar a opção -Name (em nosso exemplo vamos procurar uma VM chamada "teste" )
+para verificar uma VM específica, basta utilizar a opção -Name (em nosso exemplo vamos procurar uma VM chamada "teste" )
 
 ```powershell
 Get-VM -Name teste | Select-Object Name,StartAction
@@ -109,5 +109,5 @@ Get-VM -Name teste | Set-VM -StartAction TurnOnVMIfRunningWhenVSStopped
 
 
 ### Recomendação: 
-Usar `StartIfRunning` se estiver configurando diretamente em um host Hyper-v ou `TurnOnVMIfRunningWhenVSStopped` se estiver atraves de uma console SCVMM, é a opção mais segura, pois respeita o estado anterior da VM e evita iniciar máquinas desnecessariamente após uma reinicialização do host.
+Usar `StartIfRunning` se estiver configurando diretamente em um host Hyper-v ou `TurnOnVMIfRunningWhenVSStopped` se estiver através de uma console SCVMM, é a opção mais segura, pois respeita o estado anterior da VM e evita iniciar máquinas desnecessariamente após uma reinicialização do host.
 
