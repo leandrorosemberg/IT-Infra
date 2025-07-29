@@ -29,7 +29,7 @@ Use o seguinte comando para listar o nome das VMs e sua configuração de inicia
 ```powershell
 Get-VM | Select-Object Name,AutomaticStartAction
 ```
-![AutomaticStartAction](../../Imagem/StartAction1.jpg)
+![AutomaticStartAction](../../Imagem/HStartAction1.jpg)
 
 para verificar uma VM especifica, basta utilizar a opção -Name (em nosso exemplo vamos procurar uma VM chamada "teste" )
 
