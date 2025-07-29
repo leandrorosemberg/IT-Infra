@@ -3,17 +3,26 @@
 
 Ao gerenciar ambientes virtualizados com Hyper-V, é essencial garantir que as máquinas virtuais (VMs) iniciem automaticamente após uma reinicialização do host. Isso ajuda a manter a continuidade dos serviços e reduz a necessidade de intervenção manual.
 
-Neste how-to, vamos trabalhar com o parâmetro `StartAction`, que define o comportamento de inicialização automática de uma VM. Esse parâmetro pode ser consultado e configurado via PowerShell, permitindo que você controle se a VM deve ou não ser iniciada automaticamente quando o host for ligado.
+Neste how-to, vamos trabalhar com as opções de configuração para quem utilizar powershell conectado diretamente em um host Hyper-V e para quem conectar pela console SCVMM (System Center Virtual Machine Manager)
+
+o parâmetro `AutomaticStartAction` para quem utiliz `StartAction` para quem está acessando através do System Center Virtual Machine Manager (SCVMM), que define o comportamento de inicialização automática de uma VM. Esse parâmetro pode ser consultado e configurado via PowerShell, permitindo que você controle se a VM deve ou não ser iniciada automaticamente quando o host for ligado.
 
 ---
 
-###  Benefícios de configurar o parâmetro StartAction
+###  Benefícios de configurar o Automatic Startup
 
 - **Alta disponibilidade**: Serviços hospedados nas VMs voltam a funcionar automaticamente após reinicializações.
 - **Menos intervenção manual**: Evita que o administrador precise iniciar VMs manualmente após manutenção.
 - **Padronização**: Facilita a gestão de ambientes com múltiplas VMs.
 
 ---
+### Indice
+
+- [HYPERV](#hyperv)
+- [SCVMM](#scvmm)
+
+---
+## SCVMM
 
 ### Como verificar a configuração atual
 
@@ -53,5 +62,7 @@ Get-VM -Name teste | Set-VM -StartAction TurnOnVMIfRunningWhenVSStopped
 
 ![StartAction](../../Imagem/StartAction3.jpg)
 
+
+## HYPERV
 Recomendação: Usar `TurnOnVMIfRunningWhenVSStopped` é a opção mais segura, pois respeita o estado anterior da VM e evita iniciar máquinas desnecessariamente após uma reinicialização do host.
 
